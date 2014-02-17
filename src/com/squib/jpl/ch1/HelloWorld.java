@@ -1,4 +1,4 @@
-package com.squib.jpl;
+package com.squib.jpl.ch1;
 
 /** This is a Javadoc declaration. 
  * It is formatted to be helpful to other developers. 
@@ -6,7 +6,10 @@ package com.squib.jpl;
  */
 
 public class HelloWorld {
+	
+	static final String HELLO = "Hello, world.";
+	
 	public static void main(String[] args) {
-		System.out.println("Hello, world.");
+		System.out.println(HELLO);
 	}
 }
