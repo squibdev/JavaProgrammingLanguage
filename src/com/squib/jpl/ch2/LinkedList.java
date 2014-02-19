@@ -5,6 +5,10 @@ class LinkedList {
 	static Object[] list;
 	Object nextList;
 
+	LinkedList() {
+		
+	}
+
 	public static void main(String[] args) {
 
 		Vehicle corvette = new Vehicle();

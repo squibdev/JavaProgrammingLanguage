@@ -8,8 +8,19 @@ class Vehicle {
 
 	private static String staticName = "I'm a static name";
 
-	private final int vehicleID = -1;
-	private static int nextVehicleID = 0;
+	private int vehicleID = 0;
+	private static int nextVehicleID = 1;
+
+	Vehicle() {
+
+		vehicleID = nextVehicleID;
+		nextVehicleID++;
+	}
+	
+	Vehicle(String newBrandName) {
+		this();
+		brandName = newBrandName;
+	}
 
 	public double getSpeed() {
 
@@ -50,19 +61,25 @@ class Vehicle {
 
 		staticName = newValue;
 	}
+	
+	static int getHighestID() {
+		return nextVehicleID - 1;
+	}
 
 	public static void main(String[] args) {
 
-		Vehicle a = new Vehicle();
-		Vehicle b = new Vehicle();
+		Vehicle a = new Vehicle("Cheverolet Cavalier");
+		System.out.println("Highest ID: " + Vehicle.getHighestID());
+		Vehicle b = new Vehicle("Saturn Ion");
+		System.out.println("Highest ID: " + Vehicle.getHighestID());
+
+		System.out.println();
 
 		a.setSpeed(10.25);
 		a.setCurrentDirection(-1);
-		a.setBrandName("Cheverolet Cavalier");
 
 		b.setSpeed(20.75);
 		b.setCurrentDirection(1);
-		b.setBrandName("Saturn Ion");
 
 		System.out.println("Vehicle A Details:");
 		System.out.println("  Speed    : " + a.getSpeed());
@@ -85,7 +102,7 @@ class Vehicle {
 		System.out.println("  " + b.getStaticName());
 		System.out.println("Re-checking Object A Current Value");
 		System.out.println("  " + a.getStaticName());
-
+		
 	}
 
 }
