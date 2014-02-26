@@ -16,10 +16,17 @@ class Vehicle {
 		vehicleID = nextVehicleID;
 		nextVehicleID++;
 	}
-	
+
 	Vehicle(String newBrandName) {
 		this();
 		brandName = newBrandName;
+	}
+
+	public String toString() {
+		String desc = vehicleID + " (" + brandName + ") traveling at " + speed
+				+ " in direction " + currentDirection + ".";
+		return desc;
+
 	}
 
 	public double getSpeed() {
@@ -61,7 +68,7 @@ class Vehicle {
 
 		staticName = newValue;
 	}
-	
+
 	static int getHighestID() {
 		return nextVehicleID - 1;
 	}
@@ -102,7 +109,13 @@ class Vehicle {
 		System.out.println("  " + b.getStaticName());
 		System.out.println("Re-checking Object A Current Value");
 		System.out.println("  " + a.getStaticName());
+		System.out.println();
+		System.out.println("----------------------------------");
+		System.out.println();
 		
+		System.out.println("Vehicle " + a);
+		System.out.println("Vehicle " + b);
+
 	}
 
 }

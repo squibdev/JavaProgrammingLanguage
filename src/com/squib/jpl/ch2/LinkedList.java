@@ -8,6 +8,10 @@ class LinkedList {
 	LinkedList() {
 		
 	}
+	
+	public String toString() {
+		return null;
+	}
 
 	public static void main(String[] args) {
 
@@ -24,6 +28,9 @@ class LinkedList {
 		corvette.setBrandName("Cheverolet Corvette");
 
 		System.out.println(list[0]);
+		
+		System.out.println();
+		System.out.println("List " + list);
 	}
 
 }
